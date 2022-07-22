@@ -3,24 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navi_graph"
-    app:startDestination="@id/peopleFragment">
+    app:startDestination="@id/animeFragment">
+    <fragment
+        android:id="@+id/animeFragment"
+        android:name="com.example.lloydsbanking_challenge_iniowofemi.view.AnimeFragment"
+        android:label="Anime"
+        tools:layout="@layout/fragment_anime" >
+        <action
+            android:id="@+id/action_animeFragment2_to_infoFragment2"
+            app:destination="@id/infoFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/peopleFragment"
-        android:name="com.example.virginmoney_challenge_iniowofemi.view.PeopleFragment"
-        android:label="@string/people"
-        tools:layout="@layout/fragment_people" >
+        android:id="@+id/infoFragment"
+        android:name="com.example.lloydsbanking_challenge_iniowofemi.view.InfoFragment"
+        android:label="Information"
+        tools:layout="@layout/fragment_info" >
         <action
-            android:id="@+id/action_peopleFragment_to_roomsFragment"
-            app:destination="@id/roomsFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/roomsFragment"
-        android:name="com.example.virginmoney_challenge_iniowofemi.view.RoomsFragment"
-        android:label="@string/rooms"
-        tools:layout="@layout/fragment_rooms" >
-        <action
-            android:id="@+id/action_roomsFragment_to_peopleFragment"
-            app:destination="@id/peopleFragment" />
+            android:id="@+id/action_infoFragment2_to_animeFragment2"
+            app:destination="@id/animeFragment" />
     </fragment>
 </navigation>

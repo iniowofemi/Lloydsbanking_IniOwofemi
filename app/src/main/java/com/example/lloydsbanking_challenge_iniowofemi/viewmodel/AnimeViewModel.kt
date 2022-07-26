@@ -20,9 +20,6 @@ class AnimeViewModel @Inject constructor(
     private val _anime: MutableLiveData<UIState> = MutableLiveData(UIState.LOADING)
     val anime: LiveData<UIState> get() = _anime
 
-    private val _info: MutableLiveData<UIState> = MutableLiveData(UIState.LOADING)
-    val info: LiveData<UIState> get() = _info
-
     fun getAnime() {
         CoroutineScope(Dispatchers.IO).launch {
             try {
@@ -39,11 +36,6 @@ class AnimeViewModel @Inject constructor(
                     _anime.postValue(UIState.ERROR(e))
                 }
             }
-            val response = animeRepository.getAnime()
         }
-    }
-
-    public override fun onCleared() {
-        super.onCleared()
     }
 }

@@ -6,12 +6,7 @@ import retrofit2.Response
 
 class AnimeFakeRepo: AnimeRepository {
     override suspend fun getAnime(): Response<AnimeResponse> {
-        val newAnimeList = Response.success(AnimeResponse())
+        val newAnimeList = Response.success(AnimeResponse(listOf(),null,null))
         return newAnimeList
-    }
-
-    override suspend fun getInfo(): Response<AnimeResponse> {
-        val newInfoList = Response.success(AnimeResponse())
-        return newInfoList
     }
 }

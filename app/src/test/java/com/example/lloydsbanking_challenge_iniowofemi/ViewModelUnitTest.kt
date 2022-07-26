@@ -30,19 +30,9 @@ class ViewModelUnitTest {
     }
 
     @Test
-    fun hasPeopleList() {
+    fun hasAnimeList() {
         var expectedState = UIState.LOADING
         tempViewModel.anime.observeForever{
-            assertThat(it).isNotNull()
-            assertThat(it).isEqualTo(expectedState)
-        }
-        tempViewModel.getAnime()
-    }
-
-    @Test
-    fun hasInfoList() {
-        var expectedState = UIState.LOADING
-        tempViewModel.info.observeForever{
             assertThat(it).isNotNull()
             assertThat(it).isEqualTo(expectedState)
         }

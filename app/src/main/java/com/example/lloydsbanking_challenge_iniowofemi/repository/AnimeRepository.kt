@@ -7,7 +7,6 @@ import javax.inject.Inject
 
 interface AnimeRepository {
     suspend fun getAnime(): Response<AnimeResponse>
-    suspend fun getInfo(): Response<AnimeResponse>
 }
 
 class AnimeRepositoryImpl @Inject constructor (
@@ -16,9 +15,5 @@ class AnimeRepositoryImpl @Inject constructor (
 
     override suspend fun getAnime(): Response<AnimeResponse> {
         return animeServiceApi.getAnime()
-    }
-
-    override suspend fun getInfo(): Response<AnimeResponse> {
-        return animeServiceApi.getInfo()
     }
 }
